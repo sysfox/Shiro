@@ -30,11 +30,22 @@ const CommentSkeletonSingle = (
   </li>
 )
 
+import { useEffect } from 'react'
+import Artalk from 'artalk'
+import 'artalk/Artalk.css'
+import { useTheme } from '~/hooks/useTheme' // Assuming you have a theme hook
+
 export const CommentSkeleton: Component = () => {
+  const { isDarkMode } = useTheme()
+  
   const handleThemeChange = (isDarkMode: boolean) => {
     Artalk.setDarkMode(isDarkMode)
   }
 
+  useEffect(() => {
+    handleThemeChange(isDarkMode)
+  }, [isDarkMode])
+  
   return (
     <div className="flex min-h-[400px] flex-col space-y-4">
       {CommentSkeletonSingle}
