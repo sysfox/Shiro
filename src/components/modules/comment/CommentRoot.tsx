@@ -22,9 +22,34 @@ export const CommentAreaRoot: FC<
     )
   }
 
+import type { FC } from 'react'
+import Artalk from 'artalk'
+import 'artalk/Artalk.css'
++import { useTheme } from '~/hooks/useTheme'
++import { useEffect } from 'react'
+
+export const CommentAreaRoot: FC<
+  CommentBaseProps & {
+    allowComment: boolean
+  }
+> = (props) => {
+  const { allowComment, refId } = props
++  const { isDarkMode } = useTheme()
+  
+  // ...
+  
   const handleThemeChange = (isDarkMode: boolean) => {
     Artalk.setDarkMode(isDarkMode)
   }
+  
++  useEffect(() => {
++    handleThemeChange(isDarkMode)
++  }, [isDarkMode])
+  
+  return (
+    // ...
+  )
+}
 
   return (
     <div className="relative mt-12">
