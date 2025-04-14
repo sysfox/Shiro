@@ -1,3 +1,6 @@
+import Artalk from 'artalk'
+import 'artalk/Artalk.css'
+
 const CommentSkeletonSingle = (
   <li className="content-auto relative list-none">
     <div className="group flex w-full items-stretch gap-2">
@@ -27,12 +30,18 @@ const CommentSkeletonSingle = (
   </li>
 )
 
-export const CommentSkeleton: Component = () => (
-  <div className="flex min-h-[400px] flex-col space-y-4">
-    {CommentSkeletonSingle}
-    {CommentSkeletonSingle}
-    {CommentSkeletonSingle}
-    {CommentSkeletonSingle}
-    {CommentSkeletonSingle}
-  </div>
-)
+export const CommentSkeleton: Component = () => {
+  const handleThemeChange = (isDarkMode: boolean) => {
+    Artalk.setDarkMode(isDarkMode)
+  }
+
+  return (
+    <div className="flex min-h-[400px] flex-col space-y-4">
+      {CommentSkeletonSingle}
+      {CommentSkeletonSingle}
+      {CommentSkeletonSingle}
+      {CommentSkeletonSingle}
+      {CommentSkeletonSingle}
+    </div>
+  )
+}

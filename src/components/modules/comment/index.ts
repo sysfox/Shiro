@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic'
 import { createElement } from 'react'
+import Artalk from 'artalk'
+import 'artalk/Artalk.css'
 
 import { Loading } from '~/components/ui/loading'
 
@@ -16,3 +18,7 @@ export const CommentBoxRootLazy = dynamic(
 )
 
 export { CommentAreaRootLazy } from './CommentRootLazy'
+
+const handleThemeChange = (isDarkMode: boolean) => {
+  Artalk.setDarkMode(isDarkMode)
+}

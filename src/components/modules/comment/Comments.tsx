@@ -1,4 +1,5 @@
-'use client'
+import Artalk from 'artalk'
+import 'artalk/Artalk.css'
 
 import type { ReaderModel } from '@mx-space/api-client'
 import { BusinessEvents } from '@mx-space/webhook'
@@ -124,3 +125,7 @@ const CommentListItem: FC<{ comment: any; refId: string }> = memo(
     )
   },
 )
+
+const handleThemeChange = (isDarkMode: boolean) => {
+  Artalk.setDarkMode(isDarkMode)
+}

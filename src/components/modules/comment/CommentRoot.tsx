@@ -1,4 +1,6 @@
 import type { FC } from 'react'
+import Artalk from 'artalk'
+import 'artalk/Artalk.css'
 
 import { LazyLoad } from '~/components/common/Lazyload'
 
@@ -12,19 +14,16 @@ export const CommentAreaRoot: FC<
     allowComment: boolean
   }
 > = (props) => {
-  // const header = headers()
-  // const geo = header.get(REQUEST_GEO)
-
-  // const isCN = geo === 'CN'
-
-  // if (isCN) return <NotSupport />
-
   const { allowComment, refId } = props
-  // 兜下后端的数据，默认开
+
   if (!allowComment && allowComment !== undefined) {
     return (
       <p className="mt-[7.1rem] text-center text-xl font-medium">评论已关闭</p>
     )
+  }
+
+  const handleThemeChange = (isDarkMode: boolean) => {
+    Artalk.setDarkMode(isDarkMode)
   }
 
   return (
