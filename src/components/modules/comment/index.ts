@@ -19,6 +19,6 @@ export const CommentBoxRootLazy = dynamic(
 
 export { CommentAreaRootLazy } from './CommentRootLazy'
 
-const handleThemeChange = (isDarkMode: boolean) => {
+export const handleThemeChange = (isDarkMode: boolean) => {
   Artalk.setDarkMode(isDarkMode)
 }
