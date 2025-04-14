@@ -103,6 +103,9 @@ importers:
       '@vercel/postgres':
         specifier: 0.10.0
         version: 0.10.0
+      artalk:
+        specifier: ^2.9.1
+        version: 2.9.1(marked@15.0.7)
       better-auth:
         specifier: 1.2.5
         version: 1.2.5(typescript@5.8.3)
@@ -2563,6 +2566,11 @@ packages:
   aria-hidden@1.2.4:
     resolution: {integrity: sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==}
     engines: {node: '>=10'}
+
+  artalk@2.9.1:
+    resolution: {integrity: sha512-IFo9XqWDalsHy8BsmMA5SSB9bozBa/sBhTm/+O5KwA6DnC95lFKv7C6ScMx/Xa4ue5qSQ7VV5vxRgCh/raohkQ==}
+    peerDependencies:
+      marked: ^14.1.0
 
   asn1js@3.0.5:
     resolution: {integrity: sha512-FVnvrKJwpt9LP2lAMl8qZswRNm3T4q9CON+bxldk2iwk3FFpuwhx2FfinyitizWHsVYyaY+y5JzDR0rCMV5yTQ==}
@@ -8858,6 +8866,10 @@ snapshots:
   aria-hidden@1.2.4:
     dependencies:
       tslib: 2.8.1
+
+  artalk@2.9.1(marked@15.0.7):
+    dependencies:
+      marked: 15.0.7
 
   asn1js@3.0.5:
     dependencies:
