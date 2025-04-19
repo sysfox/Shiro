@@ -3,7 +3,6 @@ import { createElement } from 'react'
 
 import { Loading } from '~/components/ui/loading'
 
-
 // Artalk comment component (default)
 export const CommentsLazy = dynamic(() => import('./ArtalkCommentWrapper'), {
   ssr: false,
@@ -20,3 +19,4 @@ export const CommentAreaRootLazy = dynamic(
 
 // Export other components
 export { ArtalkComment } from './ArtalkComment'
+export { CommentMarkdown } from './CommentMarkdown'
