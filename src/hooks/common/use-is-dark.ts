@@ -1,6 +1,15 @@
+'use client'
+
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export const useIsDark = () => {
-  const { theme, systemTheme } = useTheme()
-  return theme === 'dark' || (theme === 'system' && systemTheme === 'dark')
+  const { resolvedTheme } = useTheme()
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    setIsDark(resolvedTheme === 'dark')
+  }, [resolvedTheme])
+
+  return isDark
 }

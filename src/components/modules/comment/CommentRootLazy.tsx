@@ -1,11 +1,11 @@
 'use client'
 
-import { ErrorBoundary } from '~/components/common/ErrorBoundary'
+import dynamic from 'next/dynamic'
 
-import { CommentAreaRoot } from './CommentRoot'
+import type { CommentBaseProps } from './types'
 
-export const CommentAreaRootLazy: typeof CommentAreaRoot = (props) => (
-  <ErrorBoundary>
-    <CommentAreaRoot {...props} />
-  </ErrorBoundary>
+export const CommentsLazy = dynamic<CommentBaseProps>(
+  () =>
+    import('./ArtalkCommentWrapper').then((mod) => mod.ArtalkCommentWrapper),
+  { ssr: false },
 )
