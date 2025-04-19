@@ -10,9 +10,10 @@ import { KateX } from '../../katex'
 //  $ c = \pm\sqrt{a^2 + b^2} $
 export const KateXRule: MarkdownToJSX.Rule = {
   match: (source) => {
-    return simpleInlineRegex(
-      /^(?!\\)\$\s*((?:\[(?:[^$]|(?=\\)\$)*?\]|<(?:[^$]|(?=\\)\$)*?>(?:(?:[^$]|(?=\\)\$)*?<(?:[^$]|(?=\\)\$)*?>)?|`(?:[^$]|(?=\\)\$)*?`|[^$]|(?=\\)\$)*?)\s*(?!\\)\$/,
-    )(source, { inline: true })
+    return simpleInlineRegex(/^(?!\\)\$\s*((?:[^$\\]|\\.)*?)\s*(?!\\)\$/)(
+      source,
+      { inline: true },
+    )
   },
   order: Priority.LOW,
   parse(capture) {
