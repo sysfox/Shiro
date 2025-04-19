@@ -20,7 +20,8 @@ export const LegacyCommentBoxRootLazy = dynamic(
 
 // New Artalk comment component (default)
 export const CommentsLazy = dynamic<CommentBaseProps>(
-  () => import('./UniversalComment').then((mod) => mod.UniversalComment),
+  () =>
+    import('./ArtalkCommentWrapper').then((mod) => mod.ArtalkCommentWrapper),
   { ssr: false },
 )
 
