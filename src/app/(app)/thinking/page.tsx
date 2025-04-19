@@ -19,7 +19,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import { useIsLogged } from '~/atoms/hooks'
 import { TiltedSendIcon } from '~/components/icons/TiltedSendIcon'
-import { CommentBoxRootLazy, CommentsLazy } from '~/components/modules/comment'
+import { CommentsLazy } from '~/components/modules/comment'
 import { PeekLink } from '~/components/modules/peek/PeekLink'
 import { LoadMoreIndicator } from '~/components/modules/shared/LoadMoreIndicator'
 import { MotionButtonBase, StyledButton } from '~/components/ui/button'
@@ -214,6 +214,7 @@ const List = () => {
               <div className="translate-y-6">
                 <img
                   src={owner.avatar}
+                  alt={`${owner.name}'s avatar`}
                   className="size-[40px] rounded-full ring-2 ring-slate-200 dark:ring-zinc-800"
                 />
               </div>
@@ -385,9 +386,7 @@ const CommentModal = (props: RecentlyModel) => {
         {content}
       </Markdown>
 
-      {allowComment && <CommentBoxRootLazy className="my-12" refId={id} />}
-
-      <CommentsLazy refId={id} />
+      {allowComment && <CommentsLazy refId={id} />}
     </div>
   )
 }

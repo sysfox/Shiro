@@ -7,9 +7,7 @@ import { ErrorBoundary } from '~/components/common/ErrorBoundary'
 import { ArtalkComment } from './ArtalkComment'
 import type { CommentBaseProps } from './types'
 
-export const UniversalComment = (
-  props: CommentBaseProps & { className?: string },
-) => {
+const UniversalComment = (props: CommentBaseProps & { className?: string }) => {
   const { refId, className } = props
   const [mounted, setMounted] = useState(false)
 
@@ -28,3 +26,5 @@ export const UniversalComment = (
     </ErrorBoundary>
   )
 }
+
+export default UniversalComment

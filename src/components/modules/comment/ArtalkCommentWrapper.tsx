@@ -5,7 +5,7 @@ import { ErrorBoundary } from '~/components/common/ErrorBoundary'
 import { ArtalkComment } from './ArtalkComment'
 import type { CommentBaseProps } from './types'
 
-export const ArtalkCommentWrapper = (
+const ArtalkCommentWrapper = (
   props: CommentBaseProps & { className?: string },
 ) => {
   const { refId, className } = props
@@ -18,3 +18,5 @@ export const ArtalkCommentWrapper = (
     </ErrorBoundary>
   )
 }
+
+export default ArtalkCommentWrapper
